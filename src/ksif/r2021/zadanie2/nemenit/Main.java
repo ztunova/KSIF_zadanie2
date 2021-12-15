@@ -6,6 +6,8 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import ksif.r2021.zadanie2.student.FileStuff;
 import ksif.r2021.zadanie2.student.Solver;
 
 import javax.sound.midi.Soundbank;
@@ -13,7 +15,11 @@ import javax.sound.midi.Soundbank;
 public class Main {
 
     public static void main(String[] args) {
+        FileStuff fileStuff= new FileStuff();
+        System.out.println("ZTShort: " + fileStuff.getZTShort());
+        System.out.println("ZTLong: " + fileStuff.getZTLong());
 
+/*
         String pt1 = "duringworldwariiseveralsovietspyringscommunicatedtomoscowcentreusingtwocipherswhichareessentiallyevolutionaryimprovementsonthebasicnihilistcipheraverystrongversionwasusedbymaxclauseninrichardsorgesnetworkinjapanandbyalexanderfooteinthelucyspyringinswitzerlandaslightlyweakerversionwasusedbytherotekapellenetwork";
         String pt2 = "matsumotogivesthreecouriersasealedpacketeachtodelivertotokyoheinformsthemthatacopyofthetreatyisinsideoneofthemhaghiobtainsallthreepackagesandfindsonlynewspapersbuthehasonemorecarduphissleevematsumotopitieskittyayoungwomanhefindshuddlinginadoorwayduringarainstormandtakesherinwhenhepreparestoleaveforjapanwiththetreatyshebegshimtospendafewhourswithherhegivesinattractedbyherbeautybutwhenhewakesuplatersheisgonewiththetreatydisgracedhecommitsritualsuicidetracksjellusicdowninhishomecountrybutistoolatehaghihasalreadybetrayedhimandwhenconfrontedbyhissuperiorsjellusicshootshimselfwirestheserialnumbersofthebanknotesusedtopayjellusicwhichjasonpassesontoagentnoworkingundercoverasacircusclownnamednemototraceonatraintripoutofthecountryinpursuitofthestolentreatyisnearlykilledinatrapsetbyhaghiwhileheissleepinghiscarisdetachedandleftinatunnelheawakensjustbeforeanothertrainsmashesintoitsonjawhohadbeentrickedintobeingtheonetosmugglethetreatyoutofthecountrybyhaghispromisenottoharmlearnsofthecrashracestothesiteandisreunitedwithherlove";
         Integer[] perm = {18, 4, 19, 1, 10, 6, 17, 14, 13, 0, 2, 9, 7, 16, 11, 5, 12, 15, 3, 8};
@@ -51,5 +57,6 @@ public class Main {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+ */
     }
 }
