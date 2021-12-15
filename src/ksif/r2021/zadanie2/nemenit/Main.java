@@ -8,6 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import ksif.r2021.zadanie2.student.FileStuff;
+import ksif.r2021.zadanie2.student.Key;
 import ksif.r2021.zadanie2.student.Solver;
 
 import javax.sound.midi.Soundbank;
@@ -18,6 +19,9 @@ public class Main {
         FileStuff fileStuff= new FileStuff();
         System.out.println("ZTShort: " + fileStuff.getZTShort());
         System.out.println("ZTLong: " + fileStuff.getZTLong());
+        Key k= new Key();
+        k.generateAllKeysLength4();
+        System.out.println("number of keys: " + k.getAllKeys().size());
 
 /*
         String pt1 = "duringworldwariiseveralsovietspyringscommunicatedtomoscowcentreusingtwocipherswhichareessentiallyevolutionaryimprovementsonthebasicnihilistcipheraverystrongversionwasusedbymaxclauseninrichardsorgesnetworkinjapanandbyalexanderfooteinthelucyspyringinswitzerlandaslightlyweakerversionwasusedbytherotekapellenetwork";
