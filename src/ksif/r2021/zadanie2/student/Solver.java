@@ -53,9 +53,43 @@ public class Solver {
 
     public String solveTransposition(String ct2, Integer[] key) {
         String retVal = null;
-        //
-        //   ...     
-        //
+
+        int columns= key.length;
+        int rows= ct2.length() / columns;
+        int incompleteRows= ct2.length() % columns;
+        if (incompleteRows > 0){
+            rows++;
+        }
+
+        ArrayList<Integer> permList= new ArrayList<Integer>(Arrays.asList(key));
+        char[][] table= new char[rows][columns];
+
+        int actualColumn, actualRow, orderInPerm, lengtfOfColumn, indexCt2= 0;
+
+        for(actualColumn= 0; actualColumn< columns; actualColumn++){
+            orderInPerm= permList.indexOf(actualColumn);
+            lengtfOfColumn= rows;
+            if(incompleteRows > 0 && orderInPerm >= incompleteRows){
+                lengtfOfColumn= lengtfOfColumn -1;
+            }
+
+            for (actualRow= 0; actualRow< lengtfOfColumn; actualRow++){
+                table[actualRow][orderInPerm] = ct2.charAt(indexCt2);
+                indexCt2++;
+            }
+        }
+
+        StringBuilder sb= new StringBuilder();
+        for (actualRow= 0; actualRow< rows; actualRow++){
+            for (actualColumn= 0; actualColumn< columns; actualColumn++){
+                if (table[actualRow][actualColumn] != '\u0000'){
+                    sb.append(table[actualRow][actualColumn]);
+                }
+            }
+        }
+
+        retVal= sb.toString();
+        System.out.println("solved transpozition: " + retVal);
         return retVal;
     }
 

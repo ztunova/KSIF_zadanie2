@@ -25,7 +25,8 @@ public class Main {
         System.out.println("number of keys: " + k.getAllKeys().size());
 
         Solver s= new Solver();
-        s.getPermutation("prislajar");
+        var perm= s.getPermutation("heslo");
+        s.solveTransposition("akoimdtfryrapamrgu", perm);
 //        s.solveVigenere(fileStuff.getZTShort());
 
   //      Decryption d= new Decryption();
