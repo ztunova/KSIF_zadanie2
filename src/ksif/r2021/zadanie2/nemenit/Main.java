@@ -25,7 +25,8 @@ public class Main {
         System.out.println("number of keys: " + k.getAllKeys().size());
 
         Decryption d= new Decryption();
-        d.cyclicKeyVigenere("abcde", "abcdefghijklm");
+        //d.cyclicKeyVigenere("abcde", "abcdefghijklm");
+        d.decryptVigenere("heslo", "gdrknhesloiftmp");
 
 /*
         String pt1 = "duringworldwariiseveralsovietspyringscommunicatedtomoscowcentreusingtwocipherswhichareessentiallyevolutionaryimprovementsonthebasicnihilistcipheraverystrongversionwasusedbymaxclauseninrichardsorgesnetworkinjapanandbyalexanderfooteinthelucyspyringinswitzerlandaslightlyweakerversionwasusedbytherotekapellenetwork";
