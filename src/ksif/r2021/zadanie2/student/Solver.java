@@ -1,6 +1,7 @@
 package ksif.r2021.zadanie2.student;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Solver {
 
@@ -28,9 +29,25 @@ public class Solver {
 
     public Integer[] getPermutation(String key) {
         Integer[] perm = new Integer[key.length()];
-        //
-        //   ...     
-        //
+
+        char[] sortedKeyArray = key.toCharArray();
+        Arrays.sort(sortedKeyArray);
+        System.out.println("sorted key: " + Arrays.toString(sortedKeyArray));
+        int keyLength= key.length();
+
+        for(int i= 0; i< keyLength; i++){
+            char keyChar= key.charAt(i);
+            for(int j= 0; j< keyLength; j++){
+                char sortedChar= sortedKeyArray[j];
+                if(keyChar == sortedChar){
+                    perm[i]= j;
+                    sortedKeyArray[j]= '_';
+                    break;
+                }
+            }
+        }
+
+        System.out.println("perm: " + Arrays.toString(perm));
         return perm;
     }
 

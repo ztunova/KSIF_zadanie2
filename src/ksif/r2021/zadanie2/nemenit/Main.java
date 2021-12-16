@@ -25,10 +25,11 @@ public class Main {
         System.out.println("number of keys: " + k.getAllKeys().size());
 
         Solver s= new Solver();
-        s.solveVigenere(fileStuff.getZTShort());
+        s.getPermutation("prislajar");
+//        s.solveVigenere(fileStuff.getZTShort());
 
-        Decryption d= new Decryption();
-        d.decryptVigenere("heslo", "gdrknhesloiftmp");
+  //      Decryption d= new Decryption();
+  //      d.decryptVigenere("heslo", "gdrknhesloiftmp");
 
 /*
         String pt1 = "duringworldwariiseveralsovietspyringscommunicatedtomoscowcentreusingtwocipherswhichareessentiallyevolutionaryimprovementsonthebasicnihilistcipheraverystrongversionwasusedbymaxclauseninrichardsorgesnetworkinjapanandbyalexanderfooteinthelucyspyringinswitzerlandaslightlyweakerversionwasusedbytherotekapellenetwork";
