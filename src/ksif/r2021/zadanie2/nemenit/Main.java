@@ -24,8 +24,10 @@ public class Main {
         k.generateAllKeysLength4();
         System.out.println("number of keys: " + k.getAllKeys().size());
 
+        Solver s= new Solver();
+        s.solveVigenere(fileStuff.getZTShort());
+
         Decryption d= new Decryption();
-        //d.cyclicKeyVigenere("abcde", "abcdefghijklm");
         d.decryptVigenere("heslo", "gdrknhesloiftmp");
 
 /*

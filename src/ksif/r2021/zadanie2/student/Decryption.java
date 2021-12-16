@@ -12,11 +12,11 @@ public class Decryption {
             x= x + 'a';
             decryptedText.append((char) (x));
         }
-        System.out.println("decrypted text: " + decryptedText.toString());
+        //System.out.println("decrypted text: " + decryptedText.toString());
         return decryptedText.toString();
     }
 
-    public String cyclicKeyVigenere(String key, String zt){
+    private String cyclicKeyVigenere(String key, String zt){
         int ztLength= zt.length();
         int keyLength= key.length();
         StringBuilder cyclicKey= new StringBuilder();
@@ -24,7 +24,7 @@ public class Decryption {
         for(int i= 0; i< ztLength; i++){
             cyclicKey.append(key.charAt(i % keyLength));
         }
-        System.out.println("cyclic key: " + cyclicKey.toString());
+        //System.out.println("cyclic key: " + cyclicKey.toString());
         return cyclicKey.toString();
     }
 }
