@@ -7,6 +7,7 @@ import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import ksif.r2021.zadanie2.student.Decryption;
 import ksif.r2021.zadanie2.student.FileStuff;
 import ksif.r2021.zadanie2.student.Key;
 import ksif.r2021.zadanie2.student.Solver;
@@ -22,6 +23,9 @@ public class Main {
         Key k= new Key();
         k.generateAllKeysLength4();
         System.out.println("number of keys: " + k.getAllKeys().size());
+
+        Decryption d= new Decryption();
+        d.cyclicKeyVigenere("abcde", "abcdefghijklm");
 
 /*
         String pt1 = "duringworldwariiseveralsovietspyringscommunicatedtomoscowcentreusingtwocipherswhichareessentiallyevolutionaryimprovementsonthebasicnihilistcipheraverystrongversionwasusedbymaxclauseninrichardsorgesnetworkinjapanandbyalexanderfooteinthelucyspyringinswitzerlandaslightlyweakerversionwasusedbytherotekapellenetwork";
