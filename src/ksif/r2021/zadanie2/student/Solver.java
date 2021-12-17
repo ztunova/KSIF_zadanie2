@@ -19,11 +19,30 @@ public class Solver {
             allCandidates.add(candidate);
         }
 
-
         // hint: hodnotit bez konca, t.j. kluca
-        //   ...     
-        //
-        //return "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+        String message, transpKey, bestTranspKey = null, bestMessage = null;
+        TextEvaluation evaluation= new TextEvaluation();
+        double bestBigramScore= Double.MAX_VALUE;
+        double actBigramScore;
+
+        for (String candidate : allCandidates){
+            int candidateLength= candidate.length();
+            int breakIndex= candidateLength -20;
+            message= candidate.substring(0, breakIndex);
+            transpKey= candidate.substring(breakIndex, candidateLength);
+
+            actBigramScore= evaluation.l1BigramDistance(message);
+            if (actBigramScore < bestBigramScore){
+                bestBigramScore= actBigramScore;
+                bestMessage= message;
+                bestTranspKey= transpKey;
+            }
+        }
+
+        System.out.println("best score: " + bestBigramScore);
+        System.out.println("best message short: " + bestMessage);
+        System.out.println("best transp key: " + bestTranspKey);
+        retVal= bestMessage;
         return retVal;
     }
 

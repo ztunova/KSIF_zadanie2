@@ -25,8 +25,15 @@ public class Main {
         var perm= s.getPermutation("heslo");
         s.solveTransposition("akoimdtfryrapamrgu", perm);
 
+      /*  String t= "abcdefghijklmnopqrstuvwxyzabcd";
+
+        int zlom= t.length() -20;
+        System.out.println(t.substring(0, zlom));
+        System.out.println(t.substring(zlom, t.length()));
+        System.out.println(t);*/
+
         //TextEvaluation e= new TextEvaluation();
-//        s.solveVigenere(fileStuff.getZTShort());
+        s.solveVigenere(fileStuff.getZTShort());
 
   //      Decryption d= new Decryption();
   //      d.decryptVigenere("heslo", "gdrknhesloiftmp");
