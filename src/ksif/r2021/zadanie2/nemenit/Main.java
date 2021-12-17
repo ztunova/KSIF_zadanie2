@@ -7,10 +7,7 @@ import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import ksif.r2021.zadanie2.student.Decryption;
-import ksif.r2021.zadanie2.student.FileStuff;
-import ksif.r2021.zadanie2.student.Key;
-import ksif.r2021.zadanie2.student.Solver;
+import ksif.r2021.zadanie2.student.*;
 
 import javax.sound.midi.Soundbank;
 
@@ -27,6 +24,8 @@ public class Main {
         Solver s= new Solver();
         var perm= s.getPermutation("heslo");
         s.solveTransposition("akoimdtfryrapamrgu", perm);
+
+        //TextEvaluation e= new TextEvaluation();
 //        s.solveVigenere(fileStuff.getZTShort());
 
   //      Decryption d= new Decryption();

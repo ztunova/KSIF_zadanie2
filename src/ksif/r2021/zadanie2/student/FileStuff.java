@@ -35,6 +35,17 @@ public class FileStuff {
         return stringBuilder.toString();
     }
 
+    public static Object readFile(String path){
+        try {
+            FileInputStream fis= new FileInputStream(path);
+            ObjectInputStream ois= new ObjectInputStream(fis);
+            return ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     public String getZTShort() {
         return ZTShort;
     }
