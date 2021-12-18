@@ -2,6 +2,17 @@ package ksif.r2021.zadanie2.student;
 
 public class Decryption {
 
+    public String decryptMonoalfSubs(String zt, char[] inverseKey){
+        StringBuilder ot= new StringBuilder();
+        char[] ztArr= zt.toCharArray();
+        for (char actChar : ztArr){
+            int index= actChar - 'a';
+            char invChar= inverseKey[index];
+            ot.append(invChar);
+        }
+        return ot.toString();
+    }
+
     public String decryptVigenere(String key, String zt){
         String cyclicKey= cyclicKeyVigenere(key, zt);
         StringBuilder decryptedText= new StringBuilder();

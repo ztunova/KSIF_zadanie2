@@ -18,7 +18,9 @@ public class Main {
         Key k= new Key();
         char[] x= {'b', 'c', 'a'};
 
-        k.inversePermutation(x);
+        //k.inversePermutation(x);
+        Decryption d= new Decryption();
+        System.out.println(d.decryptMonoalfSubs("acababc",k.inversePermutation(x) ));
 /*
         String pt1 = "duringworldwariiseveralsovietspyringscommunicatedtomoscowcentreusingtwocipherswhichareessentiallyevolutionaryimprovementsonthebasicnihilistcipheraverystrongversionwasusedbymaxclauseninrichardsorgesnetworkinjapanandbyalexanderfooteinthelucyspyringinswitzerlandaslightlyweakerversionwasusedbytherotekapellenetwork";
         String pt2 = "matsumotogivesthreecouriersasealedpacketeachtodelivertotokyoheinformsthemthatacopyofthetreatyisinsideoneofthemhaghiobtainsallthreepackagesandfindsonlynewspapersbuthehasonemorecarduphissleevematsumotopitieskittyayoungwomanhefindshuddlinginadoorwayduringarainstormandtakesherinwhenhepreparestoleaveforjapanwiththetreatyshebegshimtospendafewhourswithherhegivesinattractedbyherbeautybutwhenhewakesuplatersheisgonewiththetreatydisgracedhecommitsritualsuicidetracksjellusicdowninhishomecountrybutistoolatehaghihasalreadybetrayedhimandwhenconfrontedbyhissuperiorsjellusicshootshimselfwirestheserialnumbersofthebanknotesusedtopayjellusicwhichjasonpassesontoagentnoworkingundercoverasacircusclownnamednemototraceonatraintripoutofthecountryinpursuitofthestolentreatyisnearlykilledinatrapsetbyhaghiwhileheissleepinghiscarisdetachedandleftinatunnelheawakensjustbeforeanothertrainsmashesintoitsonjawhohadbeentrickedintobeingtheonetosmugglethetreatyoutofthecountrybyhaghispromisenottoharmlearnsofthecrashracestothesiteandisreunitedwithherlove";

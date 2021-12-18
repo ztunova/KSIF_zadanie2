@@ -16,7 +16,7 @@ public class Key {
         Collections.shuffle(alphabet);
     }
 
-    public void inversePermutation(char[] permut){
+    public char[] inversePermutation(char[] permut){
         System.out.println(permut);
         System.out.println(Arrays.toString(charToIntArray(permut)));
 
@@ -29,6 +29,7 @@ public class Key {
 
         System.out.println(Arrays.toString(inversePermut));
         System.out.println(intToCharArray(inversePermut));
+        return intToCharArray(inversePermut);
     }
 
     private char[] intToCharArray(int[] intArr){
