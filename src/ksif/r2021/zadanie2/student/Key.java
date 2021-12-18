@@ -3,46 +3,77 @@ package ksif.r2021.zadanie2.student;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Random;
 
 public class Key {
     private ArrayList<String> allKeys;
 
-    public void randomKey(){
+    public String changeKey(String originalKey){
+        Random rand= new Random();
+        char[] changedKey= originalKey.toCharArray();
+        int i= rand.nextInt(originalKey.length());
+        int j= rand.nextInt(originalKey.length());
+        char help= changedKey[i];
+        changedKey[i] = changedKey[j];
+        changedKey[j]= help;
+
+        StringBuilder result= new StringBuilder();
+        for (Character character : changedKey) {
+            result.append(character);
+        }
+        return result.toString();
+    }
+
+    public String randomKey(){
         ArrayList<Character> alphabet= new ArrayList<Character>(26);
         for (int i= 0; i< 26; i++){
-            alphabet.set(i, (char) (i + 'a'));
+            alphabet.add((char) (i + 'a'));
         }
 
         Collections.shuffle(alphabet);
+
+        StringBuilder result= new StringBuilder();
+        for (Character character : alphabet) {
+            result.append(character);
+        }
+
+        return result.toString();
     }
 
-    public char[] inversePermutation(char[] permut){
-        System.out.println(permut);
-        System.out.println(Arrays.toString(charToIntArray(permut)));
+    public String inversePermutation(String permut){
+        //System.out.println(permut);
+        char[] permutArr= permut.toCharArray();
+        //System.out.println(Arrays.toString(charToIntArray(permut)));
 
         int[] intPermut= charToIntArray(permut);
-        int[] inversePermut= new int[permut.length];
+        int[] inversePermut= new int[permutArr.length];
 
-        for (int i= 0; i< permut.length; i++){
+        for (int i= 0; i< permutArr.length; i++){
             inversePermut[intPermut[i]] = i;
         }
 
-        System.out.println(Arrays.toString(inversePermut));
-        System.out.println(intToCharArray(inversePermut));
+        //System.out.println(Arrays.toString(inversePermut));
+        //System.out.println(intToCharArray(inversePermut));
         return intToCharArray(inversePermut);
     }
 
-    private char[] intToCharArray(int[] intArr){
+    private String intToCharArray(int[] intArr){
         char[] charArr= new char[intArr.length];
         for (int i= 0; i< intArr.length; i++){
             int x= intArr[i];
             char y= (char) (x + 'a');
             charArr[i] = y;
         }
-        return charArr;
+
+        StringBuilder result= new StringBuilder();
+        for (Character character : charArr) {
+            result.append(character);
+        }
+        return result.toString();
     }
 
-    private int[] charToIntArray(char[] charArr){
+    private int[] charToIntArray(String orig){
+        char[] charArr= orig.toCharArray();
         int[] intArr= new int[charArr.length];
         for (int i= 0; i< charArr.length; i++){
             char x= charArr[i];

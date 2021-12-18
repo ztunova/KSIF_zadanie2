@@ -15,13 +15,21 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Key k= new Key();
+        /*Key k= new Key();
+        System.out.println(k.randomKey());
         char[] x= {'b', 'c', 'a'};
 
         //k.inversePermutation(x);
         Decryption d= new Decryption();
         System.out.println(d.decryptMonoalfSubs("acababc",k.inversePermutation(x) ));
-/*
+
+        String s1 = "ahoj";
+        String s2= s1;
+        char[] ss2= s2.toCharArray();
+        char[] ss1= s1.toCharArray();
+        ss2[0] = 'x';
+        System.out.println(s1 + " " + s2 + " " + Arrays.toString(ss1) + " " + Arrays.toString(ss2));*/
+
         String pt1 = "duringworldwariiseveralsovietspyringscommunicatedtomoscowcentreusingtwocipherswhichareessentiallyevolutionaryimprovementsonthebasicnihilistcipheraverystrongversionwasusedbymaxclauseninrichardsorgesnetworkinjapanandbyalexanderfooteinthelucyspyringinswitzerlandaslightlyweakerversionwasusedbytherotekapellenetwork";
         String pt2 = "matsumotogivesthreecouriersasealedpacketeachtodelivertotokyoheinformsthemthatacopyofthetreatyisinsideoneofthemhaghiobtainsallthreepackagesandfindsonlynewspapersbuthehasonemorecarduphissleevematsumotopitieskittyayoungwomanhefindshuddlinginadoorwayduringarainstormandtakesherinwhenhepreparestoleaveforjapanwiththetreatyshebegshimtospendafewhourswithherhegivesinattractedbyherbeautybutwhenhewakesuplatersheisgonewiththetreatydisgracedhecommitsritualsuicidetracksjellusicdowninhishomecountrybutistoolatehaghihasalreadybetrayedhimandwhenconfrontedbyhissuperiorsjellusicshootshimselfwirestheserialnumbersofthebanknotesusedtopayjellusicwhichjasonpassesontoagentnoworkingundercoverasacircusclownnamednemototraceonatraintripoutofthecountryinpursuitofthestolentreatyisnearlykilledinatrapsetbyhaghiwhileheissleepinghiscarisdetachedandleftinatunnelheawakensjustbeforeanothertrainsmashesintoitsonjawhohadbeentrickedintobeingtheonetosmugglethetreatyoutofthecountrybyhaghispromisenottoharmlearnsofthecrashracestothesiteandisreunitedwithherlove";
         Integer[] perm = {18, 4, 19, 1, 10, 6, 17, 14, 13, 0, 2, 9, 7, 16, 11, 5, 12, 15, 3, 8};
@@ -58,6 +66,6 @@ public class Main {
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-*/
+
     }
 }

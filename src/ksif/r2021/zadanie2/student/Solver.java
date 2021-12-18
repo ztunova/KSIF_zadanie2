@@ -111,9 +111,47 @@ public class Solver {
 
     public String solveSubstitution(String ct2WithoutT) {
         String retVal = null;
-        //
-        //   ...     
-        //
+        String decryptedBest = "";
+        System.out.println(ct2WithoutT);
+
+        TextEvaluation evaluation = new TextEvaluation();
+        Key k = new Key();
+        Decryption d = new Decryption();
+
+            String parent = k.randomKey();
+            System.out.println("random key: " + parent);
+            String actInverseKey = k.inversePermutation(parent);
+            //System.out.println("inverse perm: " + actInverseKey);
+
+            decryptedBest = d.decryptMonoalfSubs(ct2WithoutT, actInverseKey.toCharArray());
+            System.out.println(decryptedBest);
+            double bestScore = evaluation.l1BigramDistance(decryptedBest);
+            System.out.println(bestScore);
+
+            //System.out.println("pred for");
+            for (int iteration = 0; iteration < 5000; iteration++) {
+                //System.out.println("it: " + iteration);
+                String child = parent;
+                child= k.changeKey(child);
+                //System.out.println("key: " + child);
+                actInverseKey = k.inversePermutation(child);
+                //System.out.println("po inverz perm");
+                String actDecrypted = d.decryptMonoalfSubs(ct2WithoutT, actInverseKey.toCharArray());
+                //System.out.println("po decrypted: " + actDecrypted);
+                double actScore = evaluation.l1BigramDistance(actDecrypted);
+                //System.out.println("po evaluacii: " + actScore);
+
+                if (actScore < bestScore) {
+                    decryptedBest = actDecrypted;
+                    parent = child;
+                    bestScore= actScore;
+                    System.out.println("best: " + decryptedBest);
+                }
+
+            }
+
+        System.out.println("Solved substitution: " + decryptedBest);
+
         return retVal;
     }
 
