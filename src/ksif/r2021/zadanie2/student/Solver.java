@@ -20,7 +20,7 @@ public class Solver {
         }
 
         // hint: hodnotit bez konca, t.j. kluca
-        String message, transpKey, bestTranspKey = null, bestMessage = null;
+        String message, bestCandidate = null;
         TextEvaluation evaluation= new TextEvaluation();
         double bestBigramScore= Double.MAX_VALUE;
         double actBigramScore;
@@ -29,20 +29,17 @@ public class Solver {
             int candidateLength= candidate.length();
             int breakIndex= candidateLength -20;
             message= candidate.substring(0, breakIndex);
-            transpKey= candidate.substring(breakIndex, candidateLength);
+            // transpKey= candidate.substring(breakIndex, candidate.length());
 
             actBigramScore= evaluation.l1BigramDistance(message);
             if (actBigramScore < bestBigramScore){
                 bestBigramScore= actBigramScore;
-                bestMessage= message;
-                bestTranspKey= transpKey;
+                bestCandidate= candidate;
             }
         }
 
-        System.out.println("best score: " + bestBigramScore);
-        System.out.println("best message short: " + bestMessage);
-        System.out.println("best transp key: " + bestTranspKey);
-        retVal= bestMessage;
+        retVal= bestCandidate;
+        System.out.println("Solved Vigenere: " + retVal);
         return retVal;
     }
 
@@ -51,7 +48,7 @@ public class Solver {
 
         char[] sortedKeyArray = key.toCharArray();
         Arrays.sort(sortedKeyArray);
-        System.out.println("sorted key: " + Arrays.toString(sortedKeyArray));
+        //System.out.println("sorted key: " + Arrays.toString(sortedKeyArray));
         int keyLength= key.length();
 
         for(int i= 0; i< keyLength; i++){
@@ -108,7 +105,7 @@ public class Solver {
         }
 
         retVal= sb.toString();
-        System.out.println("solved transpozition: " + retVal);
+        System.out.println("Solved transpozition: " + retVal);
         return retVal;
     }
 

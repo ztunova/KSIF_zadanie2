@@ -14,30 +14,11 @@ import javax.sound.midi.Soundbank;
 public class Main {
 
     public static void main(String[] args) {
-        FileStuff fileStuff= new FileStuff();
-        System.out.println("ZTShort: " + fileStuff.getZTShort());
-        System.out.println("ZTLong: " + fileStuff.getZTLong());
+
         Key k= new Key();
-        k.generateAllKeysLength4();
-        System.out.println("number of keys: " + k.getAllKeys().size());
+        char[] x= {'b', 'c', 'a'};
 
-        Solver s= new Solver();
-        var perm= s.getPermutation("heslo");
-        s.solveTransposition("akoimdtfryrapamrgu", perm);
-
-      /*  String t= "abcdefghijklmnopqrstuvwxyzabcd";
-
-        int zlom= t.length() -20;
-        System.out.println(t.substring(0, zlom));
-        System.out.println(t.substring(zlom, t.length()));
-        System.out.println(t);*/
-
-        //TextEvaluation e= new TextEvaluation();
-        s.solveVigenere(fileStuff.getZTShort());
-
-  //      Decryption d= new Decryption();
-  //      d.decryptVigenere("heslo", "gdrknhesloiftmp");
-
+        k.inversePermutation(x);
 /*
         String pt1 = "duringworldwariiseveralsovietspyringscommunicatedtomoscowcentreusingtwocipherswhichareessentiallyevolutionaryimprovementsonthebasicnihilistcipheraverystrongversionwasusedbymaxclauseninrichardsorgesnetworkinjapanandbyalexanderfooteinthelucyspyringinswitzerlandaslightlyweakerversionwasusedbytherotekapellenetwork";
         String pt2 = "matsumotogivesthreecouriersasealedpacketeachtodelivertotokyoheinformsthemthatacopyofthetreatyisinsideoneofthemhaghiobtainsallthreepackagesandfindsonlynewspapersbuthehasonemorecarduphissleevematsumotopitieskittyayoungwomanhefindshuddlinginadoorwayduringarainstormandtakesherinwhenhepreparestoleaveforjapanwiththetreatyshebegshimtospendafewhourswithherhegivesinattractedbyherbeautybutwhenhewakesuplatersheisgonewiththetreatydisgracedhecommitsritualsuicidetracksjellusicdowninhishomecountrybutistoolatehaghihasalreadybetrayedhimandwhenconfrontedbyhissuperiorsjellusicshootshimselfwirestheserialnumbersofthebanknotesusedtopayjellusicwhichjasonpassesontoagentnoworkingundercoverasacircusclownnamednemototraceonatraintripoutofthecountryinpursuitofthestolentreatyisnearlykilledinatrapsetbyhaghiwhileheissleepinghiscarisdetachedandleftinatunnelheawakensjustbeforeanothertrainsmashesintoitsonjawhohadbeentrickedintobeingtheonetosmugglethetreatyoutofthecountrybyhaghispromisenottoharmlearnsofthecrashracestothesiteandisreunitedwithherlove";
@@ -75,7 +56,6 @@ public class Main {
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-
- */
+*/
     }
 }
