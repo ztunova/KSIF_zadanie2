@@ -116,6 +116,12 @@ public class Solver {
         Key k = new Key();
         Decryption d = new Decryption();
 
+        String initKey = k.randomKey();
+        String initInverseKey = k.inversePermutation(initKey);
+
+        String decryptedBestTotal = d.decryptMonoalfSubs(ct2WithoutT, initInverseKey.toCharArray());
+        double bestScoreTotal = evaluation.l1BigramDistance(decryptedBestTotal);
+
         for (int restart= 0; restart< 150; restart++) {
             String parentKey = k.randomKey();
             String actInverseKey = k.inversePermutation(parentKey);
@@ -138,10 +144,15 @@ public class Solver {
                 }
 
             }
+
+            if(bestScore < bestScoreTotal){
+                decryptedBestTotal= decryptedBest;
+                bestScoreTotal= bestScore;
+            }
         }
 
-        System.out.println("Solved substitution: " + decryptedBest);
-        retVal= decryptedBest;
+        System.out.println("Solved substitution: " + decryptedBestTotal);
+        retVal= decryptedBestTotal;
 
         return retVal;
     }
