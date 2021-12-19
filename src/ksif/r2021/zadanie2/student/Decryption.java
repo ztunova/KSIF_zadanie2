@@ -1,5 +1,20 @@
 package ksif.r2021.zadanie2.student;
 
+/**
+ * Trieda ktorá obsahuje metódy na lúštenie jednotlivých šifier. V triede Solver sú tieto metódy volané v cykle,
+ * vykonávajú teda len dešifrovanie textu jedným konkrétnym klúčom, ktorý dostanú ako vstupný argument
+ *
+ * Klúčom monoalfabetickej substitúcie je určitá permutácia telegrafnej abecedy. Vstupom do funkcie je zašifrovaný text
+ * a pole znakov predstavujúce substitúciu. Index v poli reprezentuje pôvodný znak (a= 0, b= 1, c= 2, ....) a znak v
+ * poli na danom indexe reprezentuje na aký znak sa zmení po zašifrovaní. Metóda teda prechádza jednotlivými znakmi
+ * zašifrovaného textu, určí ich poradové číslo (0 -25 -> index do pola), vyberie znak na danom indexe v klúči ktorý
+ * zapíše do postupne sa vytvárajúceho otvoreného textu
+ *
+ * Pre Vigenerovu šifru sa najskôr cyklicky zopakuje klúč (metóda cyclicKeyVigenere), čím sa získa klúč rovnako dlhý
+ * ako je zašifrovaný text. Následne metóda decryptVigenere postupne prechádza znaky zašifrovaného textu a posúva ich
+ * podla znaku na rovnakej pozícií v klúči.
+ */
+
 public class Decryption {
 
     public String decryptMonoalfSubs(String zt, char[] inverseKey){
@@ -23,7 +38,7 @@ public class Decryption {
             x= x + 'a';
             decryptedText.append((char) (x));
         }
-        //System.out.println("decrypted text: " + decryptedText.toString());
+
         return decryptedText.toString();
     }
 
@@ -35,7 +50,7 @@ public class Decryption {
         for(int i= 0; i< ztLength; i++){
             cyclicKey.append(key.charAt(i % keyLength));
         }
-        //System.out.println("cyclic key: " + cyclicKey.toString());
+
         return cyclicKey.toString();
     }
 }

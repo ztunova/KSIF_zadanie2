@@ -2,6 +2,10 @@ package ksif.r2021.zadanie2.student;
 
 import java.io.*;
 
+/**
+ * Trieda ktorá obsahuje metódy na čítanie súborov
+ */
+
 public class FileStuff {
     private String ZTShort;
     private String ZTLong;
@@ -35,6 +39,7 @@ public class FileStuff {
         return stringBuilder.toString();
     }
 
+    // využité pri načítaní súboru _bigrams
     public static Object readFile(String path){
         try {
             FileInputStream fis= new FileInputStream(path);
